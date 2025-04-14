@@ -1,0 +1,43 @@
+DATA:
+  tsk_train_root: '/home/data1/my/dataset/lizard/Train/'
+  tsk_test_root: '/home/data1/my/dataset/lizard/Test/'
+  classes: 7
+
+
+TRAIN:
+  model: 'SGFSL'
+  modal_num: 1
+  # pretrained_weight: "/home/data1/my/Project/SGFSL/SGFSL_ours/exp/ext_joint_training/monusac_20x/SGFSL_d/model_weight/model_45_aji_0.631183168221861_mpq_0.5605330634353922.pth"
+  # pretrained_weight: "/home/data1/my/Project/SGFSL/SGFSL_ours/exp/ext_joint_training/monusac_20x/SGFSL_c/model_weight/model_50_aji_0.6049906449405269_mpq_0.5164237996460395.pth"
+  # pretrained_weight: "/home/data1/my/Project/SGFSL/SGFSL_ours/exp/ext_joint_training/monusac_20x/SGFSL_e/model_weight/model_50_aji_0.6038193111114445_mpq_0.5054167374227739.pth"
+  # pretrained_weight: "/home/data1/my/Project/SGFSL/SGFSL_ours/exp/ext_joint_training/monusac_20x/SGFSL_b/model_weight/model_35_aji_0.6141502044559666_mpq_0.5378132009954273.pth"
+  # pretrained_weight: "/home/data1/my/Project/SGFSL/SGFSL_ours/exp/ext_joint_training/monusac_20x/SGFSL_a/model_weight/model_35_aji_0.6234854281948091_mpq_0.5312760606616809.pth"
+  # pretrained_weight: "/home/data1/my/Project/SGFSL/SGFSL_ours/exp/ext_joint_training/monusac_20x/SGFSL_GCMvar1/model_weight/model_60_aji_0.624420944696993_mpq_0.5306379139301887.pth"
+  # pretrained_weight: "/home/data1/my/Project/SGFSL/SGFSL_ours/exp/ext_joint_training/monusac_20x/SGFSL/model_weight/model_25_aji_0.6268800326197514_mpq_0.5395693265087569.pth"
+  ignore_label: 255
+  train_gpu: [2]
+  workers: 16
+  shot: 10
+  batch_size: 2
+  batch_size_val: 1
+  base_lr: 0.0001
+  # 0.0001
+  epochs: [100, 100, 100, 100, 100] #
+  # epochs: 91
+  start_epoch: 1
+  power: 0.9
+  # momentum: 0.9
+  milestones: [50]
+  weight_decay: 0.0005
+  manual_seed: 321
+  label_mode: 'shot'
+  mag: 20x
+  ext_source: monusac_20x
+  tsk_source: lizard
+
+  ### DATASET
+  task_run_list: [1, 2, 3, 4, 5]
+  tsk_num: 6
+  novel_list: [4, 5, 6]
+  base_list: [1, 2, 3]
+

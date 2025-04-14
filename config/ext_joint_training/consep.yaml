@@ -1,0 +1,28 @@
+DATA:
+  ext_train_root: "/home/data1/my/dataset/consep/extracted_mirror/train/256x256_128x128/"
+  ext_val_root: "/home/data1/my/dataset/consep/extracted_mirror/valid/256x256_256x256/"
+  classes: 5
+
+
+TRAIN:
+  model: 'SGFSL'
+  modal_num: 1
+  layers: 50
+  ignore_label: 255
+  train_gpu: [2]
+  workers: 16
+  batch_size: 6
+  batch_size_val: 1
+  test_batch_size: 8
+  base_lr: 0.0001
+  epochs: 100
+  start_epoch: 1
+  # momentum: 0.9
+  milestones: [50]
+  weight_decay: 0.0001
+  manual_seed: 321
+  mag: '40x'
+  ext_source: consep
+
+  ### DATASET
+  task_run_list: [1, 2, 3, 4, 5]

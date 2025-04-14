@@ -1,0 +1,36 @@
+DATA:
+  tsk_train_root: '/home/data1/my/dataset/monusac/extracted_mirror/train/256x256_256x256/'
+  tsk_test_root: '/home/data1/my/dataset/monusac/extracted_mirror/test/256x256_256x256/'
+  classes: 5
+
+
+TRAIN:
+  model: 'SGFSL'
+  modal_num: 1
+  # pretrained_weight: "/home/data1/my/Project/SGFSL/SGFSL_ours/exp/ext_joint_training/consep/SGFSL/model_weight/model_50_aji_0.5192767293872208_mpq_0.34721480320849396.pth"
+  ignore_label: 255
+  train_gpu: [2]
+  workers: 16
+  shot: 20
+  batch_size: 4
+  batch_size_val: 1
+  base_lr: 0.00001
+  epochs: [200, 200, 200, 200, 200] #
+  # epochs: 91
+  start_epoch: 1
+  power: 0.9
+  # momentum: 0.9
+  milestones: [50]
+  weight_decay: 0.0001
+  manual_seed: 321
+  label_mode: 'shot'
+  mag: 40x
+  ext_source: consep
+  tsk_source: monusac
+
+  ### DATASET
+  task_run_list: [1, 2, 3, 4, 5]
+  tsk_num: 4
+  novel_list: [3, 4]
+  base_list: [1, 2]
+
