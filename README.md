@@ -30,21 +30,21 @@ python 01_joint_training_on_ext_set.py --config ./config/ext_joint_training/pann
 Fine-tune the model using a small-sample training set.
 - for ConSeP -&gt; MoNuSAC:
 ```shell
-python 02_fine_tuning_on_small_set.py --config .config/tsk_finetuning/ext_consep_tsk_monusac.yaml
+python 02_finetuing_on_tsk_set.py --config .config/tsk_finetuning/ext_consep_tsk_monusac.yaml
 ```
 - for MoNuSAC -&gt; Lizard:
 ```shell
-python 02_fine_tuning_on_small_set.py --config .config/tsk_finetuning/ext_monusac20x_tsk_lizard.yaml
+python 02_finetuing_on_tsk_set.py --config .config/tsk_finetuning/ext_monusac20x_tsk_lizard.yaml
 ```
 - for MoNuSAC -&gt; CoNSeP:
 ```shell
-python 02_fine_tuning_on_small_set.py --config .config/tsk_finetuning/ext_monusac_tsk_consep.yaml
+python 02_finetuing_on_tsk_set.py --config .config/tsk_finetuning/ext_monusac_tsk_consep.yaml
 ```
 - for MoNuSAC -&gt; PanNuke:
 ```shell
-python 02_fine_tuning_on_small_set.py --config .config/tsk_finetuning/ext_monusac_tsk_pannuke.yaml
+python 02_finetuing_on_tsk_set.py --config .config/tsk_finetuning/ext_monusac_tsk_pannuke.yaml
 ```
 - for PanNuke -&gt; MoNuSAC:
 ```shell
-python 02_fine_tuning_on_small_set.py --config .config/tsk_finetuning/ext_pannuke_tsk_monusac.yaml
+python 02_finetuing_on_tsk_set.py --config .config/tsk_finetuning/ext_pannuke_tsk_monusac.yaml
 ```
